@@ -15,14 +15,14 @@ class RegisterTest extends DuskTestCase
     public function testExample(): void
     {
         $this->browse(function (Browser $browser) {
-            $browser -> visit('/')
-                -> clickLink('Register')
-                -> type ('name', 'irfan')
-                -> type ('email', 'irfan@gmail.com')
-                -> type ('password', '1202220316')
-                -> type ('password_confirmation', '1202220316')
-                -> press('REGISTER')
-                ->assertPathIs('/dashboard');
+            $browser -> visit('/') //Beralih ke rute root
+                -> clickLink('Register') //Mengklik hyperlink dengan nama 'register'
+                -> type ('name', 'irfan') //Mengetikan 'irfan' pada field text name
+                -> type ('email', 'irfan@gmail.com') //Mengetikan 'irfan@gmail.com' pada field text email
+                -> type ('password', '1202220316') //Mengetikan '1202220316' pada field text password
+                -> type ('password_confirmation', '1202220316') //Mengetikan '1202220316' pada field text password_confirmation
+                -> press('REGISTER') //Mengklik button 'REGISTER'
+                ->assertPathIs('/dashboard'); //Memastikan path saat ini adalah '/dashboard'
         });
     }
 }
